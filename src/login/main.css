@@ -1,0 +1,77 @@
+/* ===== KCB Keycloak Login Theme ===== */
+
+/* Global background */
+html,
+body {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Main login container */
+.kcLoginClass {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/* KCB logo area */
+#kc-header {
+    padding-top: 22px !important;
+    text-align: center !important;
+}
+
+#kc-header-wrapper {
+    padding: 0 !important;
+    margin: 0 0 28px 0 !important;
+    text-align: center !important;
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+.kcb-logo {
+    display: block;
+    width: 180px;
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Login card */
+.kcFormCardClass {
+    border-top: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07) !important;
+    overflow: hidden;
+}
+
+/* Form header */
+.kcFormHeaderClass {
+    border: none !important;
+}
+
+/* Input field height */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    min-height: 44px !important;
+}
+
+/* Sign-in button */
+input[type="submit"] {
+    min-height: 44px !important;
+    border-radius: 6px !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    #kc-header {
+        padding-top: 16px !important;
+    }
+
+    .kcb-logo {
+        width: 145px;
+    }
+
+    .kcFormCardClass {
+        border-radius: 10px !important;
+    }
+}
