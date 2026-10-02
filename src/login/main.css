@@ -75,3 +75,63 @@ input[type="submit"] {
         border-radius: 10px !important;
     }
 }
+
+/* Login loading state */
+#kc-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Login loading spinner */
+.kcb-login-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: kcb-login-spin 0.7s linear infinite;
+}
+
+#kc-login:disabled {
+    cursor: wait;
+    opacity: 0.85;
+}
+
+@keyframes kcb-login-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Login loading state */
+#kc-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Login loading spinner */
+.kcb-login-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: kcb-login-spin 0.7s linear infinite;
+}
+
+#kc-login:disabled {
+    cursor: wait;
+    opacity: 0.85;
+}
+
+@keyframes kcb-login-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
