@@ -1,27 +1,53 @@
-/* ===== KCB Keycloak Login Theme ===== */
+﻿/* ===== KCB Keycloak Login Theme ===== */
 
-/* Global background */
+/* Global page */
 html,
 body {
+    min-height: 100%;
+    margin: 0;
     background: #ffffff !important;
     background-image: none !important;
 }
 
-/* Main login container */
+body.kcBodyClass {
+    min-height: 100vh;
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/*
+ * Center the entire authentication UI vertically and horizontally.
+ * This applies to login, registration, password update,
+ * logout confirmation, and other login-theme pages.
+ */
 .kcLoginClass {
+    width: 100% !important;
+    min-height: 100vh !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+    padding: 32px 20px !important;
+
     background: #ffffff !important;
     background-image: none !important;
 }
 
 /* KCB logo area */
 #kc-header {
-    padding-top: 22px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 0 28px 0 !important;
     text-align: center !important;
 }
 
 #kc-header-wrapper {
     padding: 0 !important;
-    margin: 0 0 28px 0 !important;
+    margin: 0 !important;
+
     text-align: center !important;
     font-size: 0 !important;
     color: transparent !important;
@@ -35,12 +61,18 @@ body {
     margin: 0 auto;
 }
 
-/* Login card */
+/* Authentication card */
 .kcFormCardClass {
+    width: 100% !important;
+    max-width: 620px !important;
+
+    margin: 0 auto !important;
+
     border-top: none !important;
     border-radius: 14px !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07) !important;
-    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.07) !important;
 }
 
 /* Form header */
@@ -48,23 +80,61 @@ body {
     border: none !important;
 }
 
-/* Input field height */
+/* Input fields */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     min-height: 44px !important;
 }
 
-/* Sign-in button */
-input[type="submit"] {
+/* Submit buttons */
+input[type="submit"],
+button[type="submit"] {
     min-height: 44px !important;
     border-radius: 6px !important;
 }
 
-/* Responsive adjustments for mobile */
+/* Login loading state */
+#kc-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Login loading spinner */
+.kcb-login-spinner {
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+
+    animation: kcb-login-spin 0.7s linear infinite;
+}
+
+#kc-login:disabled {
+    cursor: wait;
+    opacity: 0.85;
+}
+
+@keyframes kcb-login-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
+    .kcLoginClass {
+        padding: 24px 16px !important;
+    }
+
     #kc-header {
-        padding-top: 16px !important;
+        margin-bottom: 22px !important;
     }
 
     .kcb-logo {
@@ -73,65 +143,5 @@ input[type="submit"] {
 
     .kcFormCardClass {
         border-radius: 10px !important;
-    }
-}
-
-/* Login loading state */
-#kc-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Login loading spinner */
-.kcb-login-spinner {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.45);
-    border-top-color: #ffffff;
-    border-radius: 50%;
-    animation: kcb-login-spin 0.7s linear infinite;
-}
-
-#kc-login:disabled {
-    cursor: wait;
-    opacity: 0.85;
-}
-
-@keyframes kcb-login-spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Login loading state */
-#kc-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Login loading spinner */
-.kcb-login-spinner {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.45);
-    border-top-color: #ffffff;
-    border-radius: 50%;
-    animation: kcb-login-spin 0.7s linear infinite;
-}
-
-#kc-login:disabled {
-    cursor: wait;
-    opacity: 0.85;
-}
-
-@keyframes kcb-login-spin {
-    to {
-        transform: rotate(360deg);
     }
 }
